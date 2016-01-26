@@ -8,6 +8,9 @@
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/pikaday.css">
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script type="text/javascript" src="//maps.google.com/maps/api/js"></script>
+		<script src="js/gmaps.js"></script>
 	</head>
 	
 	<body>
@@ -16,7 +19,7 @@
 if(isset($_SESSION["user"])) {
 	?>
 	<div id="topbar">
-		<div id="logged_in_area"><?php echo $_SESSION["user"]->username; ?> - <a href="?p=logout">Logout</a></div>
+		<div id="logged_in_area"><?php echo $_SESSION["user"]->username; ?> - <a href="?p=step1">Start</a> - <a href="?p=logout">Logout</a></div>
 	</div>
 	<?php
 }

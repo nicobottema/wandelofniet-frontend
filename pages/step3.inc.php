@@ -20,7 +20,7 @@ $icon = $json->result->weather->icon;
 			echo "<table class='center'><tr><td><img src='http://openweathermap.org/img/w/$icon.png' ></td><td>$weather</td></tr></table>";
 		?> 
 		<br />
-		<a href="?p=planwalk"><span class="btn-class" style="width: 184px;">Plan My Walk</span></a><br /><br />
+		<a href="?p=planwalk&date=<?php echo $date; ?>&hour=<?php echo $hour; ?>&location=<?php echo $location; ?>"><span class="btn-class" style="width: 184px;">Plan My Walk</span></a><br /><br />
 		<a href="?p=alt"><span class="btn-class">Check Out Alternatives</span></a>
 		<input type="hidden" name="loc" value="<?php echo $location; ?>" /><br />
 		<br /><br />
