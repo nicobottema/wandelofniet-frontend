@@ -2,14 +2,13 @@
 $location = (isset($_GET["loc"]) ? $_GET["loc"] : $_POST["loc"]);
 ?>
 <div class="body_container center" style="width: 400px;">
-	<form action="?p=step3" method="POST">
+	<form action="?p=step3" method="POST" onsubmit="return validateStep2()">
 		<h3>When do you want to go?</h3>
 		
-
 		<input type="text" name="date" style="width: 100px" id="datepicker"/><br />
 		<br />
 		<h3>Starting which hour? (00 - 24)</h3>
-		<input type="text" name="hour" style="width: 50px" /><br />
+		<input type="text" name="hour" id="txtStartingHour" style="width: 50px" /><br />
 		<br />
 		<br />
 		<input type="submit" value="Check" />
@@ -32,4 +31,18 @@ $location = (isset($_GET["loc"]) ? $_GET["loc"] : $_POST["loc"]);
 	});
 	
 	$("#datepicker").focus();
+	
+	function validateStep2() {
+		if(document.getElementById("datepicker").value.length < 8) {
+			alert("Please enter a valid date");
+			document.getElementById("datepicker").focus();
+			return false;
+		}
+		if(document.getElementById("txtStartingHour").value.length < 1) {
+			alert("Please enter a starting hour");
+			document.getElementById("txtStartingHour").focus();
+			return false;
+		}
+		return true;
+	}
 </script>

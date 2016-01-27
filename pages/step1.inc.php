@@ -1,5 +1,5 @@
 <div class="body_container center" style="width: 400px;">
-	<form action="?p=step2" method="POST">
+	<form action="?p=step2" method="POST" onsubmit="return validateStep1()">
 		<h3>Where do you want to go for your walk?</h3>
 		<input type="text" name="loc" id="txtLocation" style="width: 150px" /><br />
 		<br />
@@ -11,4 +11,13 @@
 
 <script type="text/javascript">
 	document.getElementById("txtLocation").focus();
+	
+	function validateStep1() {
+		if(document.getElementById("txtLocation").value.length < 3) {
+			alert("Please enter a valid location");
+			document.getElementById("txtLocation").focus();
+			return false;
+		}
+		return true;
+	}
 </script>
