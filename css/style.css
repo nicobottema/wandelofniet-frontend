@@ -1,5 +1,15 @@
+html, body {
+	height:100%;
+}
+
 body {
 	font-family: 'Open Sans', sans-serif;
+	/*background: url(../img/background.jpg) no-repeat center center fixed; 
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;*/
+	background-color: rgb(239, 242, 235) !important;
 }
 
 a {
@@ -8,9 +18,7 @@ a {
 }
 
 #topbar {
-	width: 100%;
-	box-shadow: 0px 5px 5px rgba(0,0,0,0.5);
-	height: 50px;
+	
 }
 
 #login_form {
@@ -49,6 +57,7 @@ h1 {
 	margin-left:auto;
 	margin-right:auto;
 	text-align: center;
+	background-color:#fff;
 }
 
 .btn-class{
@@ -105,4 +114,117 @@ h1 {
 	margin-top: 50px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+
+/* Rutger: */
+.header {
+	background-color:#1b1b1b;
+	border-bottom:2px solid #D80606;
+}
+
+.header .info {
+	display:flex;
+}
+
+.header .logo {
+	display:inline-block;
+}
+
+.header .logo {
+    background-color: white;
+    width: 100px;
+    text-align: center;
+    display: inline-block;
+    height: 100px;
+    border-radius: 50px;
+    padding-top: 5px;
+}
+
+.header .logo img {
+	width:85px;
+}
+
+.header .title {
+	display:inline-block;
+	position:relative;
+}
+
+.header .title h1 {
+	margin-top:30px;
+	margin-left:10px;
+	color:#fff;
+}
+
+.content-container {
+	min-height:700px;
+}
+
+.footer {
+	background-color:#1b1b1b;
+	border-top:2px solid #D80606;
+	min-height:115px;
+}
+
+.header-container {
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+.content-container {
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+.footer-container {
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+.header #topbar {
+    height: 40px;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 200px;
+    float: right;
+    margin-top: 60px;
+}
+
+.slick-slide img {
+	width:100%;
+}
+
+.slick-prev, .slick-next {
+    position: absolute;
+    display: block;
+    height: 20px;
+    width: 20px;
+    line-height: 0;
+    font-size: 0;
+    cursor: pointer;
+    background: transparent;
+    color: transparent;
+    top: 50%;
+    margin-top: -10px;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+.slick-prev {
+	left:-30px;
+}
+
+.slick-prev:before {
+	font-family: FontAwesome;
+	content: "\f053";
+}
+
+.slick-next {
+	right:-30px;
+}
+
+.slick-next:before {
+	font-family: FontAwesome;
+	content: "\f054";
 }

@@ -28,7 +28,7 @@ if(isset($_SESSION["user"])) {
 		}
 	}
 } else {
-if(isset($_GET["p"])) {
+	if(isset($_GET["p"])) {
 		switch($_GET["p"]) {
 			case "login":
 			case "register":
@@ -41,5 +41,4 @@ if(isset($_GET["p"])) {
 include("include/header.inc.php");
 include("pages/$page.inc.php");
 include("include/footer.inc.php");
-
 ?>
