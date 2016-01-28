@@ -32,10 +32,10 @@ if(isset($_POST["username"])) {
 	<?php if(isset($_GET["reg"])) echo "Registration successfull"; ?>
 	<div class="row">
 		<div class="col-md-12 login-form">
-			<form method="POST" autocomplete="off">
+			<form method="POST" autocomplete="off" onsubmit="return validateLogin()">
 				<table>
 					<tr>
-						<td class="error-msg">
+						<td class="error-msg" id="tdError">
 							<?php
 								if(isset($error)) echo "Invalid username or password";
 							?>
@@ -49,7 +49,7 @@ if(isset($_POST["username"])) {
 					</tr>
 					<tr>
 						<td>
-							<input type="password" name="password" placeholder="Password" />
+							<input type="password" name="password" id="txtPassword" placeholder="Password" />
 						</td>
 					</tr>
 					<tr>
@@ -65,4 +65,17 @@ if(isset($_POST["username"])) {
 </div>
 	<script>
 		$("#txtUsername").focus();
+		
+		function validateLogin() {
+			var valid = false;
+			if($("#txtUsername").val() == "") {
+				$("#tdError").html("Invalid username");
+				$("#txtUsername").focus();
+			} else if($("#txtPassword").val() == "") {
+				$("#tdError").html("Invalid password");
+				$("#txtPassword").focus();
+			} else valid = true;
+			
+			return valid;
+		}
 	</script>
