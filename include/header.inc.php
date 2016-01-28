@@ -31,7 +31,7 @@
 									if(isset($_SESSION["user"])) {
 								?>
 						<div id="topbar">
-							<div id="logged_in_area"><?php echo $_SESSION["user"]->username; ?> (&euro;<?php echo number_format((float)$_SESSION['user']->balance, 2, ',', ''); ?>) - <a href="?p=logout">Logout</a></div>
+							<div id="logged_in_area"><a href="?p=account"><?php echo $_SESSION["user"]->username; ?> (&euro;<?php echo number_format((float)$_SESSION['user']->balance, 2, ',', ''); ?>)</a> - <a href="?p=logout">Logout</a></div>
 						</div>
 								<?php
 									}
