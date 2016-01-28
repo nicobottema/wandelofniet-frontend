@@ -35,7 +35,7 @@
 									if(isset($_SESSION["user"])) {
 								?>
 						<div id="topbar">
-							<div id="logged_in_area"><?php echo $_SESSION["user"]->username; ?> - <a href="?p=step1">Start</a> - <a href="?p=logout">Logout</a></div>
+							<div id="logged_in_area"><a href="?p=account"><?php echo $_SESSION["user"]->username; ?></a> - <a href="?p=step1">Start</a> - <a href="?p=logout">Logout</a></div>
 						</div>
 								<?php
 									}

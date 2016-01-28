@@ -1,14 +1,29 @@
 <?php
-	if(isset($_POST["submit"])) {
+	$valid = false;
+	$formerr = '';
+	if(isset($_POST['submit'])) {
+		if($_POST['e_mail'] == '' && $_POST['display_name'] == '' && $_POST['balance'] == '' && $_POST['password'] == '') {
+			$formerr .= 'Please fill in at least one field';
+		} else {
+			if(!($_POST['password'] == '' && $_POST['confirm'] == '')) {
+				if($_POST['password'] != $_POST['confirm']) {
+					$formerr .= 'Please make sure that the password and password confirm match';
+				} else {
+					$valid = true;
+				}
+			} else {
+				$valid = true;
+			}
+		}
+	}
+
+	if($valid) {
 		$updates = array();
-		if(!isset($_POST["password"]) || !isset($_POST["confirm"])) {
-			$page = $_SERVER['PHP_SELF'] . "?error=pw";
-			header("Refresh: 0; url=$page");
-		} else if(isset($_POST["password"]) && isset($_POST["confirm"])) {
+		if(isset($_POST["password"])) {
 			$updates["password"] = $_POST["password"];
 		}
-		if(isset($_POST["email"])) {
-			$updates["email"] = $_POST["email"];
+		if(isset($_POST["e_mail"])) {
+			$updates["e_mail"] = $_POST["e_mail"];
 		}
 		if(isset($_POST["display_name"])) {
 			$updates["display_name"] = $_POST["display_name"];
@@ -16,6 +31,7 @@
 		if(isset($_POST["balance"])) {
 			$updates["balance"] = $_POST["balance"];
 		}
+
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, "http://".$apiHost . ":" . $apiPort . "/users/" . $_SESSION["user"]->_id);
@@ -38,17 +54,14 @@
 			echo $error;
 		}
 	} else {
-		if(isset($_GET["error"])) {
-			echo "<script>error('" . $_GET["error"] . "')</script>";
-		}
 		$fields = array(
-			'email' => $_SESSION["user"]->e_mail,
+			'e_mail' => $_SESSION["user"]->e_mail,
 			'password' => "",
 			'display_name' => $_SESSION["user"]->display_name,
 			'balance' => $_SESSION["user"]->balance
 		);
 		echo "<html>";
-		echo "<div class =\"error-message\"></div>";
+		echo "<div class =\"error-message\">$formerr</div>";
 		echo "<form method = \"POST\" >";
 		foreach($fields as $key=>$value) {
 			if($key == "password") {
@@ -63,12 +76,3 @@
 		echo "</html>";
 	}
 ?>
-<script type="text/javascript">
-	function error(message) {
-		if(message == 'pw') {
-			$('.error-message').text('Please fill in both password fields!');
-		} else {
-			$('.error-message').text('An unknown error occurred, please fill in the form')
-		}
-	}
-</script>
