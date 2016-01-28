@@ -18,7 +18,7 @@
 	<body>
 		<div class="center container" style="width: 400px;" id="divLogin">
 			<h1>Walk Or Not</h1>
-			
+			<span id="txtLoginMessage"></span>
 			<table class="center">
 				<tr>
 					<td colspan="2" align="center">
@@ -26,7 +26,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<td align="right">
 						Username
 					</td>
 					<td>
@@ -34,7 +34,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<td align="right">
 						Password
 					</td>
 					<td>
@@ -62,7 +62,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<td align="right">
 						Email
 					</td>
 					<td>
@@ -70,7 +70,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<td align="right">
 						Username
 					</td>
 					<td>
@@ -78,7 +78,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<td align="right">
 						Password
 					</td>
 					<td>
@@ -86,7 +86,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<td align="right">
 						Password again
 					</td>
 					<td>
@@ -97,7 +97,7 @@
 					<td colspan="2" align="right">
 						<br />
 						<a href="#" onclick="openLogin()">Login</a>
-						<input type="button" value="Login" onclick="register()" style="margin-left: 130px;"/>
+						<input type="button" value="Register" onclick="register()" style="margin-left: 130px;"/>
 					</td>
 				</tr>
 			</table>
@@ -141,7 +141,7 @@
 
 		<div class="container center hidden" style="width: 800px; height: 500px; padding: 20px; text-align: left" id="divShowMovie">
 			<a href="#" onclick="backToMovies()">Back to movies</a>
-			<a href="#"><div class="btn-class" style="float: right; padding: 10px 15px 10px 15px;">$ 9,95</div></a>
+			<a href="#"><div class="btn-class" style="float: right; padding: 10px 15px 10px 15px;" onclick="buyMovie()">$ 9,95</div></a>
 			<h3><span id="spnMovieTitle"></span></h3>
 			<img id="imgMovieImage" width="200" align="left" />
 			<div id="movie_details">
@@ -167,9 +167,15 @@
 			</div>
 		</div>
 		
-		<div class="container center hidden" id="divPlanWalk">
+		<div class="container center hidden" id="divPlanWalk" style="width: 450px">
 			<center><h2>Plan your walk</h2></center>
-			<div id="map" width="600" height="400"></div>
+			<div id="map" width="400" height="300"></div>
+			<br />
+		</div>
+		
+		<div class="container center hidden" id="divBuyMovie" style="width: 450px">
+			<h2 id="buyResult"></h2>
+			<br />
 		</div>
 		
 		<script>

@@ -1,21 +1,24 @@
 var apiHost = "127.0.0.1";
 var apiPort = 3000;
-var loggedInUsername = "";
+var loggedInUser = {};
 var walkLocation = "";
 var walkDate = "";
 var walkHour = "";
 var geocoder = new google.maps.Geocoder();
 var map;
 var coords = [];
+var selectedMovie = {};
 
 function openRegistration() {
 	$("#divLogin").hide();
 	$("#divRegister").show();
+	$("#txtRegisterEmail").focus();
 }
 
 function openLogin() {
 	$("#divLogin").show();
 	$("#divRegister").hide();
+	$("#txtLoginUsername").focus();
 }
 
 function register() {
@@ -26,7 +29,7 @@ function register() {
 	} else if($("#txtRegisterPassword1").val() == "")	{
 		alert("Please enter a valid password");
 	} else if($("#txtRegisterPassword1").val() != $("#txtRegisterPassword2").val())	{
-		alert("The passwords do not match");
+		alert("Please make sure the passwords match");
 	} else {
 		$.post( "http://" + apiHost + ":" + apiPort + "/users", { 
 			username: $("#txtRegisterUsername").val(),
@@ -35,10 +38,10 @@ function register() {
 			password: $("#txtRegisterPassword1").val()
 		})
 		  .done(function( data ) {
-			loggedInUsername = $("#txtRegisterUsername").val();
 			$("#divRegister").hide();
-			$("#divStep1").show();
-			$("#txtLocation").focus();
+			$("#txtLoginMessage").html("Account successfully registered<br/><br />")
+			$("#divLogin").show();
+			$("#txtLoginUsername").focus();
 		  })
 		  .error(function( data ) {
 			alert(data.responseJSON.message);
@@ -57,7 +60,7 @@ function login() {
 			password: $("#txtLoginPassword").val()
 		})
 		  .done(function( data ) {
-			loggedInUsername = $("#txtLoginUsername").val();
+			loggedInUser = data.user;
 			$("#divLogin").hide();
 			$("#divStep1").show();
 			$("#txtLocation").focus();
@@ -151,6 +154,9 @@ function showMovie(id) {
 		$("#spnMovieDirector").html(movie.directors.join(", "));
 		$("#spnMovieWriters").html(movie.writers.join(", "));
 		$("#spnMovieStars").html(movie.stars.join(", "));
+		
+		selectedMovie = { id: movie.id, title: movie.title };
+		
 		$("#divShowMovie").show();
 	  })
 	 .error(function( data ) {
@@ -170,7 +176,7 @@ function planWalk() {
 	if(walkLocation == "home") {
 		if(!!navigator.geolocation) {
 			var mapOptions = {
-				zoom: 12,
+				zoom: 14,
 				mapTypeId: google.maps.MapTypeId.ROADMAP
 			};
 			
@@ -186,7 +192,6 @@ function planWalk() {
 			document.getElementById('google_canvas').innerHTML = 'No Geolocation Support.';
 		}
 	} else {
-		
 		geocoder.geocode( { 'address': walkLocation}, function(results, status) {
 			if (status == google.maps.GeocoderStatus.OK) {
 				var latitude = results[0].geometry.location.lat();
@@ -194,7 +199,7 @@ function planWalk() {
 				
 				map = new GMaps({
 					div: '#map',
-					zoom: 12,
+					zoom: 14,
 					lat: latitude,
 					lng: longitude,
 				});
@@ -202,11 +207,10 @@ function planWalk() {
 		});
 	}
 
-	
 	setTimeout(function() {
 		GMaps.on('click', map.map, function(event) {
-		var lat = event.latLng.lat();
-		var lng = event.latLng.lng();
+			var lat = event.latLng.lat();
+			var lng = event.latLng.lng();
 
 			coords.push({ lat: lat, lng: lng });
 			
@@ -232,4 +236,20 @@ function displayPoints() {
 			travelMode: 'walking',
 		});
 	}
+}
+
+function buyMovie() {
+	$.post( "http://" + apiHost + ":" + apiPort + "/users/transaction", { 
+		description: selectedMovie.id,
+		amount: 9.95,
+		user_id: loggedInUser._id
+	})
+	  .done(function( data ) {
+		$("#buyResult").html("Bedankt voor de aankoop van " + selectedMovie.title)
+		$("#divShowMovie").hide();
+		$("#divBuyMovie").show();
+	  })
+	 .error(function( data ) {
+		alert(data.responseJSON.message);
+	  });
 }
