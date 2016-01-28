@@ -379,7 +379,7 @@ a:focus, a:hover {
 	padding-bottom:10px;
 }
 
-.login-form input[type="text"], .login-form input[type="password"] {
+.login-form input[type="text"], .login-form input[type="password"], .login-form input[type="email"] {
 	text-align:center;
 	font-size:20px;
 	padding:5px;
