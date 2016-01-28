@@ -15,7 +15,7 @@
 <div class="standard-content col-md-8 col-md-push-2 text-middle single-movie">
 	<div class="buy-movie">
 		<form action="?p=step3" method="POST">
-			<a href="?p=buymovie"><div class="btn-class" style="float: right; padding: 10px 15px 10px 15px;">$ 9,95</div></a>
+			<a href="?p=buymovie&id=<?php echo $_GET['id']; ?>"><div class="btn-class" style="float: right; padding: 10px 15px 10px 15px;">$ 9,95</div></a>
 		</form>
 	</div>
 	<div class="row">

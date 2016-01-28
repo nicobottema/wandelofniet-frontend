@@ -5,7 +5,6 @@
 		'description' => urlencode($_GET['id']),
 		'amount' => 9.95,
 		'user_id' => $_SESSION["user"]->_id
-		
 	);
 
 	$fields_string = "";
@@ -23,18 +22,25 @@
 	// die();
 	$json = json_decode($output);
 	//var_dump($json);
-//	die();
+	//	die();
+	?>
+	<div class="small-content col-md-4 col-md-push-4 text-middle small-frame">
+		<div class="row">
+
+	<?php 
 	if($json->success) {
 		?>
-		<html>
 			<h2> Bedankt voor de aankoop </h2>
-		</html>
-		<script type="text/javascript">
-			
-		</script>
 		<?php
 	} else {
-		$error = $json->message;
-		echo $error;
+		//$error = $json->message;
+		//echo $error;
+		?>
+			<h2>Er is iets mis gegaan. Onze excuses voor het ongemak</h2>
+		<?php 
 	}
+	?>
+			<a href="./"><div class="btn-class">Back to start</div></a>
+		</div>
+	</div>
 ?>
