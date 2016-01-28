@@ -10,6 +10,11 @@
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/pikaday.css">
+		<script type="text/javascript" src="//maps.google.com/maps/api/js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+		<script src="js/pikaday.js"></script>
+		<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
 	</head>
 	<body>
 		<div class="header">

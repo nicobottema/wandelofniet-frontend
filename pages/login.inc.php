@@ -28,43 +28,40 @@ if(isset($_POST["username"])) {
 	}
 }
 ?>
-<div class="text-middle">
-	<h1>Walk Or Not</h1>
-	<?php if(isset($_GET["reg"])) echo "Registration successful"; ?>
-	<form method="POST"  id="login_form" class="center">
-		<table style="margin-left: 25px;">
-			<tr>
-				<td colspan="2" align="center">
-					Login
-					<?php
-						if(isset($error)) echo "<br /><br />$error<br /><Br />";
-					?>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Username
-				</td>
-				<td>
-					<input type="text" name="username" id="txtUsername" />
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Password
-				</td>
-				<td>
-					<input type="password" name="password" />
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2" align="right">
-					<a href="?p=register">Register</a>
-					<input type="submit" value="Login" style="margin-left: 130px;"/>
-				</td>
-			</tr>
-		</table>
-	</form>
+<div class="small-content col-md-4 col-md-push-4 text-middle small-frame">
+	<?php if(isset($_GET["reg"])) echo "Registration successfull"; ?>
+	<div class="row">
+		<div class="col-md-12 login-form">
+			<form method="POST" autocomplete="off">
+				<table>
+					<tr>
+						<td class="error-msg">
+							<?php
+								if(isset($error)) echo "Invalid username or password";
+							?>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="text" name="username" id="txtUsername" placeholder="Username" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="password" name="password" placeholder="Password" />
+						</td>
+					</tr>
+					<tr>
+						<td class="submit-td">
+							<input class="btn-class" type="submit" value="Login">
+						</td>
+					</tr>
+				</table>
+			</form>
+			<a href="?p=register">Register</a>
+		</div>
+	</div>
 </div>
 	<script>
 		$("#txtUsername").focus();

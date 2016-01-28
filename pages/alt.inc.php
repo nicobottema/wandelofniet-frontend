@@ -11,7 +11,7 @@
 		$result = $json->result;
 	}
 ?>
-<div class="standard-content text-middle">
+<div class="standard-content text-middle movie-collection">
 	<?php if(isset($error)) echo "<br /><br />$error<br /><Br />"; ?>
 	<h3>Alternative Options</h3>
 	<h4>Popular Movies</h4>
@@ -21,21 +21,25 @@
 	$i = 0;
 	foreach($result as $movie) {
 		$i++;
+		if ($i == 100){
+			break;
+		}
 		?>
 		<td>
 			<a href="?p=movie&id=<?php echo $movie->id; ?>" target="_blank">
-				<table class="tblMovie">
-					<tr>
-						<td>
-							<img src='<?php echo $movie->image; ?>'/>
-						</td>
-						<td align="left">
-							<b><?php echo $movie->title; ?></b><br />
-							<br />
+				<div class="row">
+					<div class="col-md-3 img">
+						<img src='<?php echo $movie->image; ?>'/>
+					</div>
+					<div class="col-md-9 text">
+						<div class="title">
+							<b><?php echo $movie->title; ?></b>
+						</div>
+						<div class="rating">
 							<?php echo $movie->rating; ?>
-						</td>
-					</tr>
-				</table>
+						</div>
+					</div>
+				</div>
 			</a>
 		</td>
 		<?php

@@ -17,27 +17,6 @@ a {
 	text-decoration: inherit;
 }
 
-#topbar {
-	
-}
-
-#login_form {
-	margin-top: 100px;
-	box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
-	width: 310px;
-	padding: 10px 0px 10px 0px;
-	border: 1px solid rgba(0,0,0,0.2);
-	
-}
-
-#login_form table td {
-	padding: 5px;
-}
-
-h1 {
-	margin-top: 100px;
-}
-
 #logged_in_area {
 	float: right;
 	margin-right: 20px;
@@ -118,6 +97,10 @@ h1 {
 
 
 /* Rutger: */
+
+a:focus, a:hover {
+	color:#000;
+}
 .header {
 	background-color:#1b1b1b;
 	border-bottom:2px solid #fff;
@@ -278,6 +261,16 @@ h1 {
 	min-width: 600px;
 }
 
+.small-content {
+	padding-top: 20px;
+    background-color: #fff;
+    opacity: 0.96;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    position: relative;
+    min-width: 400px;
+}
+
 .buy-movie {
     position: absolute;
     right: 20px;
@@ -342,4 +335,52 @@ h1 {
 
 .step3 .btn-class {
 	width:280px;
+}
+
+.step3 .margin-left {
+	margin-left:4px;
+}
+
+.movie-collection .img {
+
+}
+.movie-collection .text {
+	text-align:left;
+}
+.movie-collection .text .title {
+    min-height: 45px;
+    max-height: 45px;
+}
+.movie-collection .text .rating {
+
+}
+.movie-collection #tblMovies td{
+	border:1px solid #ccc;
+	padding-top:5px;
+	padding-bottom:5px;
+	width:33%;
+}
+
+.login-form table {
+	width:50%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.login-form .error-msg {
+	color:red;
+	text-align:center;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.login-form td {
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.login-form input[type="text"], .login-form input[type="password"] {
+	text-align:center;
+	font-size:20px;
+	padding:5px;
 }

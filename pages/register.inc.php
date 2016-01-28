@@ -29,50 +29,44 @@ if(isset($_POST["username"])) {
 	}
 }
 ?>
-<div class="center">
-<h1>Walk Or Not</h1>
-	<form method="POST"  id="login_form" class="center">
-		<table style="margin-left: 25px;">
-			<tr>
-				<td colspan="2" align="center">
-					Register a new account
-					<?php
-						if(isset($error)) echo "<br /><br />$error<br /><Br />";
-					?>
-				</td>
-			</tr>
-			<tr>
-				<td align="left">
-					Username
-				</td>
-				<td>
-					<input type="text" name="username" id="txtUsername" />
-				</td>
-			</tr>
-			<tr>
-				<td align="left">
-					Email
-				</td>
-				<td>
-					<input type="text" name="e_mail" />
-				</td>
-			</tr>
-			<tr>
-				<td align="left">
-					Password
-				</td>
-				<td>
-					<input type="password" name="password" />
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2" align="right">
-					<a href="?p=login">Login</a>
-					<input type="submit" value="Register" style="margin-left: 130px;"/>
-				</td>
-			</tr>
-		</table>
-	</form>
+<div class="small-content col-md-4 col-md-push-4 text-middle small-frame">
+	<div class="row">
+		<div class="col-md-12 login-form">
+			<form method="POST" class="center" autocomplete="off">
+				<table>
+					<tr>
+						<td class="err-msg">
+							<?php
+								if(isset($error)) echo "$error";
+							?>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="text" name="username" id="txtUsername" placeholder="Username" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="email" name="e_mail" placeholder="Email" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="password" name="password" placeholder="Password" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="btn-class" type="submit" value="Register"/>
+						</td>
+					</tr>
+				</table>
+			</form>
+			<a href="?p=login">Login</a>
+		</div>
+	</div>
 </div>
 
 <script>
