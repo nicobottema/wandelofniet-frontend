@@ -16,38 +16,45 @@
 	</head>
 	
 	<body>
-	<div class="header">
-		<div class="container header-container">
-			<div class="row">
-				<a href="./">
-				<div class="col-md-4 info">
-					<div class="logo">
-						<img src="img/logo.png" alt="logo">
+		<div class="header">
+			<div class="container header-container">
+				<div class="row">
+					<a href="./">
+					<div class="col-md-4 info">
+						<div class="logo">
+							<img src="img/logo.png" alt="logo">
+						</div>
+						<div class="title">
+							<h1>Wandel of Niet</h1>
+						</div>
 					</div>
-					<div class="title">
-						<h1>Wandel of Niet</h1>
-					</div>
-				</div>
-				</a>
-				<div class="col-md-4"></div>
-				<div class="col-md-4">
-							<?php
-							if(isset($_SESSION["user"])) {
-								?>
-					<div id="topbar">
-						<div id="logged_in_area"><?php echo $_SESSION["user"]->username; ?> - <a href="?p=step1">Start</a> - <a href="?p=logout">Logout</a></div>
-					</div>
+					</a>
+					<div class="col-md-4"></div>
+					<div class="col-md-4">
 								<?php
-							}
-							?>
+									if(isset($_SESSION["user"])) {
+								?>
+						<div id="topbar">
+							<div id="logged_in_area"><?php echo $_SESSION["user"]->username; ?> - <a href="?p=step1">Start</a> - <a href="?p=logout">Logout</a></div>
+						</div>
+								<?php
+									}
+								?>
+					</div>
 				</div>
-			</div>
-		</div>	
-	</div>
-	<div class="container content-container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="sliders">
-				  <div><img src="img/slider1.jpeg"></div>
-				  <div><img src="img/slider2.jpeg"></div>
-				</div>
+			</div>	
+		</div>
+		<div class="content">
+			<div class="container content-container">
+				<div class="row">
+					<div class="col-md-12">
+									<?php
+									if(isset($_SESSION["user"])) {
+									?>
+						<!--<div class="sliders">
+						  <div><img src="img/slider1.jpeg"></div>
+						  <div><img src="img/slider2.jpeg"></div>
+						</div>-->
+									<?php
+									}
+									?>

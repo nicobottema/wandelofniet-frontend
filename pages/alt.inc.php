@@ -11,7 +11,7 @@
 		$result = $json->result;
 	}
 ?>
-<div class="body_container center" style="width: 1000px;">
+<div class="standard-content text-middle">
 	<?php if(isset($error)) echo "<br /><br />$error<br /><Br />"; ?>
 	<h3>Alternative Options</h3>
 	<h4>Popular Movies</h4>

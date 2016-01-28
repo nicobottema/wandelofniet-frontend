@@ -46,11 +46,13 @@ h1 {
 
 .body_container {
 	margin-top: 100px;
+	margin-bottom:70px;
 	box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
 	padding: 10px 0px 10px 0px;
 	border: 1px solid rgba(0,0,0,0.2);
 	width: 1px;
 	max-width: 1000px;
+	opacity:0.98;
 }
 
 .center {
@@ -104,10 +106,6 @@ h1 {
 	background-color: rgba(0,0,0,0.1);
 }
 
-#movie_details {
-	padding-left: 220px;
-}
-
 #map {
 	width: 1000px;
 	height: 600px;
@@ -120,7 +118,7 @@ h1 {
 /* Rutger: */
 .header {
 	background-color:#1b1b1b;
-	border-bottom:2px solid #D80606;
+	border-bottom:2px solid #fff;
 }
 
 .header .info {
@@ -162,8 +160,9 @@ h1 {
 
 .footer {
 	background-color:#1b1b1b;
-	border-top:2px solid #D80606;
+	border-top:2px solid #fff;
 	min-height:115px;
+	color:#fff;
 }
 
 .header-container {
@@ -171,14 +170,48 @@ h1 {
 	padding-bottom:20px;
 }
 
+.content {
+	background: url(../img/background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
 .content-container {
 	padding-top:20px;
 	padding-bottom:20px;
+	background: url(../img/background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .footer-container {
 	padding-top:20px;
 	padding-bottom:20px;
+}
+
+.footer .title {
+    font-size: 18px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+
+.footer a, .footer a:hover, .footer a:active, .footer a:focus {
+	color:#fff;
+}
+
+.footer .logos img {
+	width:50px;
+	margin-right:10px;
+	margin-left:10px;
+}
+.footer .logos .smaller {
+	width:42px;
 }
 
 .header #topbar {
@@ -228,3 +261,81 @@ h1 {
 	font-family: FontAwesome;
 	content: "\f054";
 }
+
+.text-middle {
+	text-align:center;
+}
+
+.standard-content {
+	padding-top:20px;
+	background-color:#fff;
+	opacity: 0.96;
+	padding-bottom:20px;
+	border-radius:5px;
+	position:relative;
+	min-width: 600px;
+}
+
+.buy-movie {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+}
+
+.single-movie .title {
+	padding-bottom:30px;
+}
+
+.single-movie .movie-details .img{
+	text-align:center;
+}
+
+.single-movie .movie-details .img img {
+	float:none;
+}
+
+.single-movie .movie-details .text {
+	text-align:left;
+}
+
+.small-frame {
+	margin-top:150px;
+}
+
+.err-msg, .err-msg1 {
+	min-height: 20px;
+    color: red;
+    margin-bottom: 10px;
+}
+
+.button, .step1 form input[type="submit"] {
+	cursor: pointer;
+    display: inline-block;
+    border: 1px solid #C9AE34;
+    color: #473B04;
+    border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    font-family: Verdana;
+    width: auto;
+    height: auto;
+    font-size: 16px;
+    padding: 10px 40px;
+    box-shadow: inset 0 1px 0 0 #FFF6CE,inset 0 -1px 0 0 #E3C852,inset 0 0 0 1px #FCE88D,0 2px 4px 0 #D4D4D4;
+    -moz-box-shadow: inset 0 1px 0 0 #FFF6CE,inset 0 -1px 0 0 #E3C852,inset 0 0 0 1px #FCE88D,0 2px 4px 0 #D4D4D4;
+    -webkit-box-shadow: inset 0 1px 0 0 #FFF6CE,inset 0 -1px 0 0 #E3C852,inset 0 0 0 1px #FCE88D,0 2px 4px 0 #D4D4D4;
+    text-shadow: 0 1px 0 #FFFFFF;
+    background-color: #FCB830;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.small-frame .title {
+	margin-bottom:20px;
+}
+
+.step1 input[type="text"]{
+	width:250px;
+}
+
+

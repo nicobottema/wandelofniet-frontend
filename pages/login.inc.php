@@ -28,8 +28,8 @@ if(isset($_POST["username"])) {
 	}
 }
 ?>
-<div class="center">
-<h1>Walk Or Not</h1>
+<div class="text-middle">
+	<h1>Walk Or Not</h1>
 	<?php if(isset($_GET["reg"])) echo "Registration successful"; ?>
 	<form method="POST"  id="login_form" class="center">
 		<table style="margin-left: 25px;">
@@ -66,6 +66,6 @@ if(isset($_POST["username"])) {
 		</table>
 	</form>
 </div>
-<script>
-	$("#txtUsername").focus();
-</script>
+	<script>
+		$("#txtUsername").focus();
+	</script>

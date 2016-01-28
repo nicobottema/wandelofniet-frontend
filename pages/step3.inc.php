@@ -13,7 +13,7 @@ $json = json_decode(strtolower($output));
 $weather = $json->result->weather->description;
 $icon = $json->result->weather->icon;
 ?>
-<div class="body_container center" style="width: 400px;">
+<div class="standard-content col-md-8 col-md-push-2 text-middle step1 small-frame">
 	<form action="?p=step3" method="POST">
 		<h3>Weather Forecast (<?php echo "$date $hour:00"; ?>):</h3>
 		<?php
