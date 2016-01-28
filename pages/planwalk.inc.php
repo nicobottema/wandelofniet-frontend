@@ -1,5 +1,9 @@
-<center><h2>Plan your walk</h2></center>
-<div id="map" width="600" height="400"></div>
+<div class="row">
+	<div class="standard-content col-md-12 text-middle">
+		<h1>Plan your walk</h1>
+		<div id="map" width="600" height="400"></div>
+	</div>
+</div>
 
 <script>
 var geocoder = new google.maps.Geocoder();

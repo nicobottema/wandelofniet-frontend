@@ -90,7 +90,8 @@ a {
 #map {
 	width: 1000px;
 	height: 600px;
-	margin-top: 50px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -112,6 +113,10 @@ a:focus, a:hover {
 
 .header .logo {
 	display:inline-block;
+}
+
+.header .accountmanagment {
+	padding-right:0;
 }
 
 .header .logo {
@@ -264,7 +269,7 @@ a:focus, a:hover {
 .small-content {
 	padding-top: 20px;
     background-color: #fff;
-    opacity: 0.96;
+    opacity: 0.97;
     padding-bottom: 20px;
     border-radius: 5px;
     position: relative;
@@ -325,6 +330,10 @@ a:focus, a:hover {
     margin-right:10px;
 }
 
+.step1 input {
+	text-align:center;
+}
+
 .small-frame .title {
 	margin-bottom:20px;
 }
@@ -383,4 +392,14 @@ a:focus, a:hover {
 	text-align:center;
 	font-size:20px;
 	padding:5px;
+}
+
+.edit-form input[type="text"], .edit-form input[type="email"] {
+	margin-top:5px;
+	margin-bottom:20px;
+}
+
+.edit-form input[type="password"] {
+	margin-bottom:5px;
+	margin-top:15px;
 }

@@ -31,12 +31,12 @@
 					</div>
 					</a>
 					<div class="col-md-4"></div>
-					<div class="col-md-4">
+					<div class="col-md-4 accountmanagment">
 								<?php
 									if(isset($_SESSION["user"])) {
 								?>
 						<div id="topbar">
-							<div id="logged_in_area"><a href="?p=account"><?php echo $_SESSION["user"]->username; ?> (&euro;<?php echo number_format((float)$_SESSION['user']->balance, 2, ',', ''); ?>)</a> - <a href="?p=logout">Logout</a></div>
+							<div id="logged_in_area"><a href="?p=account"><?php echo $_SESSION["user"]->display_name; ?> (&euro;<?php echo number_format((float)$_SESSION['user']->balance, 2, ',', ''); ?>)</a> - <a href="?p=logout">Logout</a></div>
 						</div>
 								<?php
 									}
