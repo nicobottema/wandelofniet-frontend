@@ -11,6 +11,7 @@
 		$movie = $json->result;
 	}
 ?>
+
 <div class="standard-content col-md-8 col-md-push-2 text-middle single-movie">
 	<div class="buy-movie">
 		<form action="?p=step3" method="POST">
