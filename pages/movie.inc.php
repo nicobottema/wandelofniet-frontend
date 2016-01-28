@@ -13,7 +13,7 @@
 ?>
 <div class="body_container center" style="width: 800px; height: 500px; padding: 20px; text-align: left">
 	<form action="?p=step3" method="POST">
-		<a href="?p=buymovie"><div class="btn-class" style="float: right; padding: 10px 15px 10px 15px;">$ 9,95</div></a>
+		<a href="?p=buymovie&id=<?php echo $_GET["id"]; ?>"><div class="btn-class" style="float: right; padding: 10px 15px 10px 15px;">$ 9,95</div></a>
 		<h3><?php echo $movie->title ?></h3>
 		<img src="<?php echo $movie->image ?>" width="200" align="left" />
 		<div id="movie_details">

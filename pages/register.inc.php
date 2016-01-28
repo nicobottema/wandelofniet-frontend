@@ -2,8 +2,8 @@
 if(isset($_POST["username"])) {
 	$fields = array(
 		'username' => urlencode($_POST['username']),
-		'display_name' => urlencode($_POST['username']),
-		'email' => urlencode($_POST['username']),
+		'display_name' => urlencode("Anon"),
+		'e_mail' => urlencode($_POST['e_mail']),
 		'password' => urlencode($_POST['password'])
 	);
 	$fields_string = "";
@@ -54,7 +54,7 @@ if(isset($_POST["username"])) {
 					Email
 				</td>
 				<td>
-					<input type="text" name="email" />
+					<input type="text" name="e_mail" />
 				</td>
 			</tr>
 			<tr>

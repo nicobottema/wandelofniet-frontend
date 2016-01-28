@@ -20,6 +20,8 @@ if(isset($_SESSION["user"])) {
 			case "step1":
 			case "step2":
 			case "step3":
+			case "buymovie":
+			case "account":
 			case "alt":
 			case "planwalk":
 			case "movie":
