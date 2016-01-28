@@ -32,6 +32,9 @@
 				</div>
 			</div>
 		</div>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+	<script type="text/javascript" src="//maps.google.com/maps/api/js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
 	<script src="js/pikaday.js"></script>
 	<script type="text/javascript" src="js/gmaps.js"></script>

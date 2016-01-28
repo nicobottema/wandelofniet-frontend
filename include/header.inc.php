@@ -4,17 +4,13 @@
 		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 		<meta content="utf-8" http-equiv="encoding">
 		<meta name="viewport" content="initial-scale=1" />
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/>
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/pikaday.css">
-		<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-		<script type="text/javascript" src="//maps.google.com/maps/api/js"></script>
 	</head>
-	
 	<body>
 		<div class="header">
 			<div class="container header-container">
@@ -35,7 +31,7 @@
 									if(isset($_SESSION["user"])) {
 								?>
 						<div id="topbar">
-							<div id="logged_in_area"><a href="?p=account"><?php echo $_SESSION["user"]->username; ?></a> - <a href="?p=step1">Start</a> - <a href="?p=logout">Logout</a></div>
+							<div id="logged_in_area"><a href="?p=account"><?php echo $_SESSION["user"]->username; ?> (&euro;<?php echo number_format((float)$_SESSION['user']->balance, 2, ',', ''); ?>)</a> - <a href="?p=logout">Logout</a></div>
 						</div>
 								<?php
 									}

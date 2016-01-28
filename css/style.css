@@ -9,7 +9,7 @@ body {
 	  -moz-background-size: cover;
 	  -o-background-size: cover;
 	  background-size: cover;*/
-	background-color: rgb(239, 242, 235) !important;
+	background-color: #1b1b1b;
 }
 
 a {
@@ -41,7 +41,9 @@ h1 {
 #logged_in_area {
 	float: right;
 	margin-right: 20px;
+	margin-left: 20px;
 	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .body_container {
@@ -155,7 +157,7 @@ h1 {
 }
 
 .content-container {
-	min-height:700px;
+	min-height:550px;
 }
 
 .footer {
@@ -218,7 +220,7 @@ h1 {
     height: 40px;
     background-color: #fff;
     border-radius: 5px;
-    width: 200px;
+    width:auto;
     float: right;
     margin-top: 60px;
 }
@@ -299,7 +301,7 @@ h1 {
 }
 
 .small-frame {
-	margin-top:150px;
+	margin-top:100px;
 }
 
 .err-msg, .err-msg1 {
@@ -338,4 +340,6 @@ h1 {
 	width:250px;
 }
 
-
+.step3 .btn-class {
+	width:280px;
+}
