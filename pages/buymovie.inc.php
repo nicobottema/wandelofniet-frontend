@@ -25,7 +25,7 @@
 	//	die();
 	?>
 	<div class="small-content col-md-4 col-md-push-4 text-middle small-frame">
-		<div class="row">
+		<div class="row film-message">
 
 	<?php 
 	if($json->success) {
@@ -50,19 +50,24 @@
 		if($json->success) {
 			$_SESSION["user"] = $json->user;
 
-
-			?>
-				<h2> Bedankt voor de aankoop </h2>
-			<?php
+				?>
+			<h2> Thanks for your purchase. Enjoy the film! </h2>
+				<?php
 		} else {
-			?>
-				<h2>Er is iets mis gegaan. Onze excuses voor het ongemak</h2>
-			<?php 
+
+				?>
+			<h2>Something went wrong. Our apologies.</h2>
+				<?php 
 		}
 	} else {
-		?>
-			<h2>Er is iets mis gegaan. Onze excuses voor het ongemak</h2>
-		<?php 
+
+		if ($json->message == 'Account balance insufficient.'){
+			echo "<h2>". $json->message . "</h2>";
+		} else {
+				?>
+			<h2>Something went wrong. We apologize.</h2>
+				<?php 
+		}	
 	}
 	?>
 			<a href="./"><div class="btn-class">Back to start</div></a>

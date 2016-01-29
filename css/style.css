@@ -403,3 +403,8 @@ a:focus, a:hover {
 	margin-bottom:5px;
 	margin-top:15px;
 }
+
+.film-message h2 {
+	margin-left:10px;
+	margin-right:10px;
+}
