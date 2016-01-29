@@ -88,7 +88,7 @@ a {
 }
 
 #map {
-	width: 1000px;
+	width: auto;
 	height: 600px;
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -407,4 +407,106 @@ a:focus, a:hover {
 .film-message h2 {
 	margin-left:10px;
 	margin-right:10px;
+}
+
+.header .info a:hover {
+	text-decoration:none;
+}
+
+.buy-movie .btn-class {
+	float: right; 
+	padding: 10px 15px 10px 15px;
+}
+
+@media (max-width:991px){
+	.small-content {
+		min-width:0;
+	}
+	.header #topbar {
+		float:none;
+		margin-top:20px;
+	}
+	#logged_in_area {
+		padding-top:10px;
+		float:none;
+		text-align:center;
+	}
+	.header .accountmanagment {
+		padding-right:15px;
+	}
+	.header .info {
+		display:block;
+		text-align:center;
+	}
+	.standard-content {
+		min-width:0;
+	}
+	.button, .step1 form input[type="submit"] {
+		margin-bottom:5px;
+	}
+	.content-container {
+		min-height:400px;
+	}
+	.small-frame {
+		margin-top:50px;
+	}
+	.step3 .btn-class {
+		width:auto;
+	}
+	#map {
+		width:auto;
+		height:300px;
+	}
+	.step1 input[type="text"] {
+		width:auto;
+	}
+	.buy-movie {
+		position:initial;
+	}
+	.buy-movie .btn-class {
+		float:none;
+	}
+	.movie_details {
+	    text-align: center;
+   	 	margin-top: 20px;
+	}
+	.single-movie .title {
+		padding-left:5px;
+		padding-right:5px;
+	}
+	.header .title h1 {
+		margin-top:10px;
+		margin-left:0;
+	}
+
+	.plan-walk {
+		margin-right:20px;
+		margin-left:20px;
+	}
+	.movie-collection .text .title {
+		text-align:center;
+		min-height:55px;
+		max-height:none;
+	}
+	.movie-collection .text .rating {
+		text-align:center;
+		min-height:40px;
+	}
+	.movie-collection #tblMovies td {
+		padding-top:10px;
+	}
+}
+
+@media (max-width:600px){
+	.movie-collection .text .title {
+		min-height:80px;
+	}
+	.movie-collection .text .rating {
+		min-height:60px;
+	}
+}
+@media (max-width:400px){
+	.small-frame {
+		margin-top:0;
+	}
 }

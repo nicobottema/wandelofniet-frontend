@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="standard-content col-md-12 text-middle">
+	<div class="standard-content col-md-12 text-middle plan-walk">
 		<h1>Plan your walk</h1>
 		<div id="map" width="600" height="400"></div>
 	</div>

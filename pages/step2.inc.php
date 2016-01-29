@@ -5,7 +5,7 @@ $location = (isset($_GET["loc"]) ? $_GET["loc"] : $_POST["loc"]);
 	<form action="?p=step3" method="POST" onsubmit="return validateStep2()">
 		<h3>When do you want to go?</h3>
 		
-		<input type="text" name="date" id="datepicker"/>
+		<input type="text" name="date" id="datepicker" autocomplete="off"/>
 		<div class="err-msg"></div>
 		<h3>Starting which hour? (00 - 24)</h3>
 		<input type="number" name="hour" id="txtStartingHour" min="0" max="24"/>
